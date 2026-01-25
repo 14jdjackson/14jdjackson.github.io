@@ -1,1 +1,0 @@
-# 14jdjackson.github.io
