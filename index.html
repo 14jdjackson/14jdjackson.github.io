@@ -3,6 +3,9 @@
 <div></div>
 <iframe id="pmtframe" src="https://challenge-0126.intigriti.io/checkout.html?currency=XMR&price=150"></iframe>
 <script>
+setTimeout(() => {
+console.log("Waited for 3 seconds");
+}, 3000);
 document.getElementById('pmtframe').contentWindow.postMessage({
         type: 'submitTransaction',
         transaction: {
