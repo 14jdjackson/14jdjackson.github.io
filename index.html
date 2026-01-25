@@ -6,7 +6,7 @@
 document.getElementById('pmtframe').contentWindow.postMessage({
         type: 'submitTransaction',
         transaction: {
-        toAddress: '<script>alert(${FLAG})</script>',
+        toAddress: '<script>alert(${FLAG})<\/script>',
         currency: "XMR",
         amount: "1"
         }
