@@ -11,6 +11,7 @@ p {
   margin-left: 100px;
 }
 #bgv {
+  position: absolute;
   z-index: -1;
   top: 0;
   left: 0;
@@ -21,7 +22,7 @@ p {
 }
 .content {
   z-index: 1;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.1);
   width: 100%;
   position: relative;
 }
