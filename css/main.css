@@ -19,6 +19,12 @@ p {
   object-fit: cover;
   opacity: 0.8;
 }
+.content {
+  z-index: 1
+  background: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  position: relative;
+}
 #skillsList {
   algin:left;
 }
