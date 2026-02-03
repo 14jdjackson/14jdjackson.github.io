@@ -1,1 +1,24 @@
 
+h1 {
+  color: RoyalBlue;
+  margin-left: 80px;
+}
+h2 {
+  color: CornflowerBlue;
+  margin-left: 80px;
+}
+p {
+  margin-left: 100px;
+}
+#bgv {
+  z-index: -1
+}
+#skillsList {
+  algin:left;
+}
+#certsList {
+  align: center;
+}
+#ranksList {
+  align: right;
+}
