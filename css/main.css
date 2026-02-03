@@ -11,7 +11,7 @@ h3 {
 p {
 }
 ul {
-  list-style-position: inside;
+  list-style-type: none
 }
 #bgv {
   position: absolute;
