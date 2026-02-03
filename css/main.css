@@ -1,7 +1,6 @@
 
 h1 {
   color: RoyalBlue;
-  align: center;
 }
 h2 {
   color: CornflowerBlue;
@@ -26,20 +25,18 @@ p {
 }
 .content {
   z-index: 1;
-  background: rgba(0, 0, 0, 0.1);
+  background: rgba(0, 0, 0, 0.0);
   width: 100%;
   height: 100%;
   position: relative;
+  text-align: center;
 }
 #siteDesc {
-  align: center;
+  text-align: justify;
 }
 #skillsList {
-  algin: left;
 }
 #certsList {
-  align: center;
 }
 #ranksList {
-  align: right;
 }
