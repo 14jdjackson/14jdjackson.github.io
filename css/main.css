@@ -10,10 +10,11 @@ h3 {
 }
 p {
 }
-ul, dl {
+ul, dl, dd, dt {
   list-style-type: none;
   margin: 0;
   padding: 0;
+  margin-inline-start: 0;
 }
 #bgv {
   position: absolute;
