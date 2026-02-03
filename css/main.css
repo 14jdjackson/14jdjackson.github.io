@@ -29,7 +29,8 @@ ul {
   width: 60%;
   height: 100%;
   position: relative;
-  align: center;
+  margin-left: auto;
+  margin-right: auto;
   text-align: center;
 }
 #siteDesc {
