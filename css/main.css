@@ -1,12 +1,12 @@
 
 h1 {
-  color: RoyalBlue;
+  color: Green;
 }
 h2 {
-  color: CornflowerBlue;
+  color: LawnGreen;
 }
 h3 {
-  color: SkyBlue;
+  color: Lime;
 }
 p {
 }
@@ -29,6 +29,7 @@ ul {
   width: 60%;
   height: 100%;
   position: relative;
+  align: center;
   text-align: center;
 }
 #siteDesc {
