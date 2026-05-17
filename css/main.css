@@ -25,6 +25,11 @@ a {
   color: Lime;
 }
 
+h2 a {
+  color: Green;
+  text-decoration: none;
+}
+
 /* topbar */
 header {
   position: fixed;
