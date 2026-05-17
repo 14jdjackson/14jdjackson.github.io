@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <title>mithic.dev Writeups list</title>
+  <head>
+    <link rel="stylesheet" href="/css/main.css">
+  </head>
+  <body>
+    <nav class="side-nav" id="sideNav">
+      <a href="/">Home</a>
+      <a href="https://cwes.mithic.dev">Top 5 CWEs By Software</a>
+      <a href="https://portfolio.mithic.dev">Portfolio</a>
+      <a href="/writeups/list.html">Writeups</a>
+    </nav>
+    <div class="nav-overlay" id="navOverlay"></div>
+    <section class="topbar">
+      <header>
+        <button class="menu-toggle" id="menuToggle" aria-label="Open navigation">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <h2 class="Mith">mithic.dev</h2>
+      </header>
+    <div class="background">
+      <video id="bgv" src=/drive-bg.mp4 muted loop autoplay></video>
+    </div>
+    <div class="content">
+      <h1>This is where I keep my writeups!</h1>
+    <h2 id="HTB">HTB Writeups</h2>
+    <ul id="HTBList">
+      <li><a href=./HTB-Alert>Alert</a></li>
+    </ul>
+      <h2 id="Bugs">Bug Writeups</h2>
+    <dl id="BugssList">
+    </dl>
+    </div>
+    <script>
+      const toggle = document.getElementById('menuToggle');
+      const nav = document.getElementById('sideNav');
+      const overlay = document.getElementById('navOverlay');
+      function openNav() {
+        nav.classList.add('open');
+        overlay.classList.add('open');
+        toggle.classList.add('open');
+        toggle.setAttribute('aria-label', 'Close navigation');
+      }
+      function closeNav() {
+        nav.classList.remove('open');
+        overlay.classList.remove('open');
+        toggle.classList.remove('open');
+        toggle.setAttribute('aria-label', 'Open navigation');
+      }
+      toggle.addEventListener('click', () => nav.classList.contains('open') ? closeNav() : openNav());
+      overlay.addEventListener('click', closeNav);
+      nav.querySelectorAll('a').forEach(a => a.addEventListener('click', closeNav));
+    </script>
+  </body>
+</html>
