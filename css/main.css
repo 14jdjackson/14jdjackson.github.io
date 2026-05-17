@@ -1,3 +1,9 @@
+body {
+  margin: 0;
+  background: #0a0a0a;
+  color: #faf9f6;
+  font-family: monospace;
+}
 
 h1 {
   color: Green;
@@ -8,14 +14,116 @@ h2 {
 h3 {
   color: Lime;
 }
-p {
-}
 ul, dl, dd, dt {
   list-style-type: none;
   margin: 0;
   padding: 0;
   margin-inline-start: 0;
 }
+
+/* topbar */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.5rem 1rem;
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(4px);
+}
+
+.Mith {
+  margin: 0;
+  color: green;
+}
+
+/* hamburger button */
+.menu-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  padding: 6px;
+  flex-shrink: 0;
+}
+
+.menu-toggle span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: #faf9f6;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.menu-toggle.open span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.menu-toggle.open span:nth-child(2) {
+  opacity: 0;
+}
+.menu-toggle.open span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* side nav */
+.side-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 260px;
+  height: 100%;
+  background: rgba(5, 12, 5, 0.93);
+  backdrop-filter: blur(8px);
+  z-index: 200;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+  padding-top: 3.5rem;
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid rgba(0, 128, 0, 0.3);
+}
+
+.side-nav.open {
+  transform: translateX(0);
+}
+
+.side-nav a {
+  color: #faf9f6;
+  text-decoration: none;
+  padding: 0.85rem 1.5rem;
+  font-family: monospace;
+  font-size: 1rem;
+  border-left: 2px solid transparent;
+  transition: border-color 0.2s, color 0.2s, background 0.2s;
+}
+
+.side-nav a:hover {
+  color: lime;
+  border-left-color: lime;
+  background: rgba(0, 128, 0, 0.08);
+}
+
+/* overlay */
+.nav-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 150;
+}
+
+.nav-overlay.open {
+  display: block;
+}
+
+/* background video */
 #bgv {
   position: fixed;
   z-index: -1;
@@ -26,6 +134,8 @@ ul, dl, dd, dt {
   object-fit: cover;
   opacity: 0.8;
 }
+
+/* main content */
 .content {
   z-index: 1;
   background: rgba(0, 0, 0, 0.0);
@@ -36,13 +146,5 @@ ul, dl, dd, dt {
   margin-right: auto;
   text-align: center;
   color: #faf9f6;
-}
-#siteDesc {
-}
-#skillsList {
-}
-#certsList {
-}
-#ranksList {
-  
+  padding-top: 4rem;
 }
