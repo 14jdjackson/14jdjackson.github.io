@@ -21,6 +21,15 @@ ul, dl, dd, dt {
   margin-inline-start: 0;
 }
 
+a {
+  color: Lime;
+}
+
+h2 a {
+  color: Green;
+  text-decoration: none;
+}
+
 /* topbar */
 header {
   position: fixed;
