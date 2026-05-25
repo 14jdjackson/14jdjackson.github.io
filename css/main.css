@@ -5,6 +5,10 @@ body {
   font-family: monospace;
 }
 
+html {
+  font-size: 110%;
+}
+
 h1 {
   color: lime;
 }
