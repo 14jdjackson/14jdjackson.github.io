@@ -49,11 +49,11 @@
         <br>
         <img src="../img/05262.png">
      <h3>The List</h3>
-        <p>Thankfully, the overly verbose error message tells us what characters are disallowed. Removing these characters from our payload should allow us to inject our alert fucntion into the username, but the parenthesis presents us with a big problem since we use those prenthesis to pass in what our message should be for our alert box.</p>
+        <p>Thankfully, the overly verbose error message tells us what characters are disallowed. Removing these characters from our payload should allow us to inject our alert fucntion into the username, but the parentheses presents us with a big problem since we use those prenthesis to pass in what our message should be for our alert box.</p>
         <br>
-        <p>This is where <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals">Tagged Template Literals</a> (or template strings) come in handy. These are literals delimited with backticks and they can have both strings as well as expressions inside them, which means that they can also return React objects and other things if you denote placeholders with ${expression}. Most importantly, unlike string literals, if we prefix our template literal with a javascript function, javascript's native Tag Function support will force that method to parse our string literal without parenthesis!</p>
+        <p>This is where <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals">Tagged Template Literals</a> (or template strings) come in handy. These are literals delimited with backticks and they can have both strings as well as expressions inside them, which means that they can also return React objects and other things if you denote placeholders with ${expression}. Most importantly, unlike string literals, if we prefix our template literal with a javascript function, javascript's native Tag Function support will force that method to parse our string literal without parentheses!</p>
         <br>
-        <p>So we can replace the parenthesis with backticks to get around our parenthesis block and leave the script tag dangling to avoid the filtering on the forwardslash and our payload should be accepted! However, now we get a different message that indicates our username still has something wrong with it.</p>
+        <p>So we can replace the parentheses with backticks to get around our block and leave the script tag dangling to avoid the filtering on the forwardslash and our payload should be accepted! However, now we get a different message that indicates our username still has something wrong with it.</p>
         <br>
         <img src="../img/05263.png">
         <br>
@@ -62,7 +62,7 @@
      <h2>Exploiting the vulnerability</h2>
         <p>Keeping a running list of disallowed javascript and HTML keywords brought me to the "details" html tag, as the script tag is also disallowed. This tag creates a dropdown on the page that can be opened and closed by the user, and the ontoggle attribute allows us to executes javascript when it's opened or closed. This would normally be a problem, because it implies that we need user interaction on the page (clicking the details tag) to execute our javascript, but here's fun fact: The detail tag's ontoggle attribute will <em>automatically fire upon page load</em> if you include the open attribute! This is because when the browser reads detail open, it initializes the tag, and that first initialization is enough to execute our javascript.</p>
         <br>
-        <p>Now that we have a delivery method, let's find a good payload to use. Picking some payloads that are similar to alert, we're left with prompt() and print(), and either will work. Just replace the parenthesis with backticks for a final payload that looks like this: <br><code>&ltdetails open ontoggle=prompt``&gt</code></p>
+        <p>Now that we have a delivery method, let's find a good payload to use. Picking some payloads that are similar to alert, we're left with prompt() and print(), and either will work. Just replace the parentheses with backticks for a final payload that looks like this: <br><code>&ltdetails open ontoggle=prompt``&gt</code></p>
         <img src="../img/05264.png">
         <img src="../img/05265.png">
         <br>
@@ -77,6 +77,7 @@
         <ul>
             <li>Pay attention to verbose error messages</li>
             <li>Keep a running list of filtered keywords and characters when testing for injection vulnerabilities</li>
+            <li>Template literals can be used to force javascript methods to parse input without parentheses</li>
             <li>Some javascript functions can trick the browser into firing upon load without user interaction when given the right attributes</li>
         </ul>
         <p>Thanks for reading!</p>
