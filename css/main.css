@@ -6,19 +6,28 @@ body {
 }
 
 h1 {
-  color: Green;
+  color: lime;
 }
 h2 {
-  color: Green;
+  color: limegreen;
 }
 h3 {
-  color: Lime;
+  color: green;
 }
 ul, dl, dd, dt {
   list-style-type: none;
   margin: 0;
   padding: 0;
   margin-inline-start: 0;
+}
+
+em {
+  color: chartreuse
+}
+
+img {
+  max-width: 100%;
+  height: auto;
 }
 
 a {
